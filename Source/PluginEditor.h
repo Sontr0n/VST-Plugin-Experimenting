@@ -29,5 +29,7 @@ private:
     // access the processor object that created it.
     TutorialAudioProcessor& audioProcessor;
 
+    juce::Slider midiVolume; // [1]
+        
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TutorialAudioProcessorEditor)
 };
