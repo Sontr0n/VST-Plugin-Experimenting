@@ -15,6 +15,7 @@
 /**
 */
 class TutorialAudioProcessorEditor  : public juce::AudioProcessorEditor
+                                      private juce::Slider::Listener // [2]
 {
 public:
     TutorialAudioProcessorEditor (TutorialAudioProcessor&);
@@ -25,6 +26,7 @@ public:
     void resized() override;
 
 private:
+  void sliderValueChanged (juce::Slider* slider) override; // [3]
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     TutorialAudioProcessor& audioProcessor;

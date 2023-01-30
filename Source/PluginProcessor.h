@@ -19,6 +19,7 @@ class TutorialAudioProcessor  : public juce::AudioProcessor
                             #endif
 {
 public:
+    float noteOnVel;
     //==============================================================================
     TutorialAudioProcessor();
     ~TutorialAudioProcessor() override;

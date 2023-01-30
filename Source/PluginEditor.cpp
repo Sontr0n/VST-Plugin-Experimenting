@@ -17,6 +17,9 @@ TutorialAudioProcessorEditor::TutorialAudioProcessorEditor (TutorialAudioProcess
     // editor's size to whatever you need it to be.
     setSize (200, 200);
 
+    //add the listener to the slider
+    midiVolume.addListener (this);
+
     //these define the parameters of our slider object 
     midiVolume.setSliderStyle(juce::Slider::LinearBarVertical);
     midiVolume.setRange(0.0, 127.0, 1.0);
@@ -31,6 +34,10 @@ TutorialAudioProcessorEditor::TutorialAudioProcessorEditor (TutorialAudioProcess
 
 TutorialAudioProcessorEditor::~TutorialAudioProcessorEditor()
 {
+}
+
+void TutorialAudioProcessorEditor::sliderValueChanged (juce::Slider* slider) {
+    audioProcessor.noteOnVel = midiVolume.getValue();
 }
 
 //==============================================================================
