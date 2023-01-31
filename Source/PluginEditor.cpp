@@ -11,11 +11,12 @@
 
 //==============================================================================
 TutorialAudioProcessorEditor::TutorialAudioProcessorEditor (TutorialAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p)
+    : AudioProcessorEditor (&p), audioProcessor (p), synthAudioSource (keyboardState),
+      keyboardComponent(keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard)
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (200, 200);
+    setSize (600, 160);
 
     //add the listener to the slider
     midiVolume.addListener (this);
@@ -30,6 +31,15 @@ TutorialAudioProcessorEditor::TutorialAudioProcessorEditor (TutorialAudioProcess
 
     //this function adds the slider to the editor
     addAndMakeVisible(&midiVolume);
+    
+    addAndMakeVisible(keyboardComponent);
+    setAudioChannels(0, 2);
+    startTimer(400);
+}
+
+void TutorialProcessorEditor::timerCallback() override {
+    keyboardComponent.grabKeyboardFocus();
+    stopTimer();
 }
 
 TutorialAudioProcessorEditor::~TutorialAudioProcessorEditor()

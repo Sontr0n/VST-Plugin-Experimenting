@@ -30,8 +30,11 @@ private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     TutorialAudioProcessor& audioProcessor;
-
+    
     juce::Slider midiVolume; // [1]
-        
+
+    juce::MidiKeyboardState keyboardState;
+    SynthAudioSource synthAudioSource;
+    juce::MidiKeyboardComponent keyboardComponent;    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TutorialAudioProcessorEditor)
 };
