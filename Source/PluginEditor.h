@@ -14,7 +14,7 @@
 //==============================================================================
 /**
 */
-class TutorialAudioProcessorEditor  : public juce::AudioProcessorEditor
+class TutorialAudioProcessorEditor  : public juce::AudioProcessorEditor, 
                                       private juce::Slider::Listener // [2]
 {
 public:
