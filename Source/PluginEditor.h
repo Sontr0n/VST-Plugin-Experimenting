@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include <juce_audio_basics/synthesisers/juce_Synthesiser.cpp>
 
 //==============================================================================
 /**

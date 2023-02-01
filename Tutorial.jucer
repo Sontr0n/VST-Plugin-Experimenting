@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="KCM6UR" name="Tutorial" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn">
+              pluginCharacteristicsValue="pluginEditorRequiresKeys,pluginIsMidiEffectPlugin,pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn">
   <MAINGROUP id="N7VDQ4" name="Tutorial">
     <GROUP id="{0C3EDBA2-9004-3F40-51EA-21887ED78DC6}" name="Source">
       <FILE id="KzdLKZ" name="PluginProcessor.cpp" compile="1" resource="0"
