@@ -10,13 +10,15 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
-#include <juce_audio_basics/synthesisers/juce_Synthesiser.cpp>
+
+
 
 //==============================================================================
 /**
 */
+
 class TutorialAudioProcessorEditor  : public juce::AudioProcessorEditor, 
-                                      private juce::Slider::Listener // [2]
+                                      private juce::Slider::Listener 
 {
 public:
     TutorialAudioProcessorEditor (TutorialAudioProcessor&);
@@ -27,15 +29,15 @@ public:
     void resized() override;
 
 private:
-  void sliderValueChanged (juce::Slider* slider) override; // [3]
+  void sliderValueChanged (juce::Slider* slider) override;
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     TutorialAudioProcessor& audioProcessor;
     
-    juce::Slider midiVolume; // [1]
-
-    juce::MidiKeyboardState keyboardState;
+    juce::Slider midiVolume;
+    
     SynthAudioSource synthAudioSource;
-    juce::MidiKeyboardComponent keyboardComponent;    
+    juce::MidiKeyboardComponent keyboardComponent;
+        
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TutorialAudioProcessorEditor)
 };
