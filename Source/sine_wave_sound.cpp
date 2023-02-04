@@ -1,6 +1,7 @@
 #include <JuceHeader.h>
 
-struct SineWaveSound : public juce::SynthesizerSound {
+
+struct SineWaveSound : public juce::SynthesiserSound {
     SineWaveSound(){};
 
     bool appliesToNote (int) override {return true;}
